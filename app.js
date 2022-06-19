@@ -1,8 +1,15 @@
+const { response } = require("express");
 const express = require("express");
 
 const app = express();
 
 const PORT = process.env.PORT || 8877;
+
+app.get("/", (req, res) => {
+  response.json({
+    message: "Rodando",
+  });
+});
 
 app.get("/agents", (req, res) => {
   res.json([
